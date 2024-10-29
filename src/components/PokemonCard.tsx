@@ -1,10 +1,10 @@
-
-interface PokemonCard {
+interface pokemonProps {
   name: string;
   imgSrc?: string;
 }
 
-function PokemonCard({ name, imgSrc }: PokemonCardProps) {
+
+function PokemonCard({ name, imgSrc }: pokemonProps) {
   return (
     <figure>
       {imgSrc ? <img src={imgSrc} alt="" /> : <p>"???"</p>}
