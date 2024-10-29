@@ -2,14 +2,17 @@ interface pokemonProps {
   name: string;
   imgSrc?: string;
 }
+
+
 function PokemonCard({ name, imgSrc }: pokemonProps) {
   return (
-    <div>
-      <figure>
-        {imgSrc ? <img src={imgSrc} /> : <p>???</p>}
-        <figcaption>{name}</figcaption>
-      </figure>
-    </div>
+    <figure>
+      {imgSrc ? <img src={imgSrc} alt="" /> : <p>"???"</p>}
+
+      <figcaption>{name}</figcaption>
+    </figure>
   );
 }
+
+
 export default PokemonCard;
