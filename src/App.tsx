@@ -1,12 +1,11 @@
 import "./App.css";
 
-import { useState /*, useEffect*/ } from "react";
+import { useState } from "react";
 
 import PokemonCard from "./components/PokemonCard";
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-
 
 
   function handleOnClick(type: boolean) {
@@ -17,17 +16,13 @@ function App() {
 
   return (
     <div>
-
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       {pokemonIndex ? (
         <button onClick={() => handleOnClick(false)}>Précédent</button>
       ) : null}
       {pokemonIndex < pokemonList.length - 1 ? (
         <button onClick={() => handleOnClick(true)}>Suivant</button>
- null}
-
-      <PokemonCard pokemon={pokemonList[0]} />
-
+      ) : null}
     </div>
   );
 }
@@ -39,7 +34,6 @@ const pokemonList = [
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
   },
   {
-
     name: "charmander",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
@@ -55,7 +49,6 @@ const pokemonList = [
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
   },
   {
-
     name: "mew",
   },
 ];
