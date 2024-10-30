@@ -1,11 +1,23 @@
 import "./App.css";
 
+import NavBar from "./components/NavBar";
+
 import { useState } from "react";
 
 import PokemonCard from "./components/PokemonCard";
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
+
+
+  return (
+    <div>
+      <NavBar
+        pokemonIndex={pokemonIndex}
+        setPokemonIndex={setPokemonIndex}
+        pokemonList={pokemonList}
+      />{" "}
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
 
 
   function handleOnClick(type: boolean) {
@@ -23,6 +35,7 @@ function App() {
       {pokemonIndex < pokemonList.length - 1 ? (
         <button onClick={() => handleOnClick(true)}>Suivant</button>
       ) : null}
+
     </div>
   );
 }
