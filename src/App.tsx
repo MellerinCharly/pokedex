@@ -1,29 +1,9 @@
+
+import { useState } from "react";
+
 import "./App.css";
 
-import { useState /*, useEffect*/ } from "react";
-
 import PokemonCard from "./components/PokemonCard";
-
-function App() {
-  const [pokemonIndex, setPokemonIndex] = useState(0);
-
-  function handleOnClick(id: number) {
-    setPokemonIndex(id);
-  }
-
-  return (
-    <div>
-      <nav>
-        {pokemonList.map((pokemon, index) => (
-          <button onClick={() => handleOnClick(index)} key={index}>
-            {pokemon.name}
-          </button>
-        ))}
-      </nav>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-    </div>
-  );
-}
 
 const pokemonList = [
   {
@@ -51,6 +31,25 @@ const pokemonList = [
   },
 ];
 
-export default App;
+function App() {
+  const [pokemonIndex, setPokemonIndex] = useState(0);
 
-//...
+  return (
+    <div>
+      <nav>
+        {pokemonList.map((pokemon, index) => (
+          <button
+            key={pokemon.name}
+            type="button"
+            onClick={() => setPokemonIndex(index)}
+          >
+            {pokemon.name}
+          </button>
+        ))}
+      </nav>
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+    </div>
+  );
+}
+
+export default App;
