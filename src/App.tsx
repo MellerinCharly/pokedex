@@ -1,15 +1,12 @@
 import "./App.css";
 
-import { useState /*, useEffect*/ } from "react";
+import { useState } from "react";
 
 import PokemonCard from "./components/PokemonCard";
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  // useEffect(() => {
-  //   console.log(pokemonIndex);
-  // }, [pokemonIndex]);
 
   function handleOnClick(type: boolean) {
     type
